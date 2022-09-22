@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wordle </title>
+  <script src='https://d3js.org/d3.v5.min.js'></script>
+  <script src="main.js"></script>
+    <link rel = "stylesheet" href= "style.css"/>
+
+
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body
+        {
+            height: 100%;
+            font-family: "Baskerville Old Face";
+
+        }
+
+
+        #my_div
+        {
+            display: flex;
+            background-color: black;
+            height: 100%;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        header
+        {
+            border-bottom: 1px solid rgb(58,58,60);
+
+        }
+
+        .title
+        {
+            color: antiquewhite;
+            font-size: 3rem;
+            margin: 0.4rem 0 0.4rem 0;
+            font-family: "Baskerville Old Face";
+            text-align: center;
+        }
+
+
+        #board-container
+        {
+            align-items: center;
+            overflow: hidden;
+
+        }
+
+        #inside_div
+        {
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        #board
+        {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .square
+        {
+            border: 3px solid rgb(58,58,60);
+            min-width: 60px;
+            min-height: 60px;
+            font-size: 3rem;
+            color: antiquewhite;
+
+            text-transform: uppercase;
+            margin-right: 6px;
+            text-align: center;
+            padding: 0;
+
+
+        }
+
+        #keyboard-container
+        {
+            height: 200px;
+        }
+        .keyboard-row
+        {
+            justify-content: center;
+            display: flex;
+            width: 100%;
+            margin: 0 auto 8px;
+            touch-action: manipulation;
+        }
+
+        .keyboard-row button
+        {
+            font-family: inherit;
+            font-weight: bold;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            height: 60px;
+            color: #cec8c8;
+            background-color: rgb(93, 91, 91);
+            text-transform: uppercase;
+            margin-right: 6px;
+            border-radius: 4px;
+            user-select: none;
+            flex-grow: 1;
+
+        }
+        .keyboard-row button.wide-button {
+            flex-grow: 1.5;
+        }
+
+        .spacer-half {
+            flex-grow: 0.5;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div id="my_div">
+        <div id = "inside_div">
+            <header>
+            <h1 class="title">Wordle </h1>
+            </header>
+            <div id="board-container">
+                <div id="board"> </div>
+            </div>
+            <div id="keyboard-container">
+                <div class="keyboard-row">
+                    <button data-key="q">q</button>
+                    <button data-key="w">w</button>
+                    <button data-key="e">e</button>
+                    <button data-key="r">r</button>
+                    <button data-key="t">t</button>
+                    <button data-key="y">y</button>
+                    <button data-key="u">u</button>
+                    <button data-key="i">i</button>
+                    <button data-key="o">o</button>
+                    <button data-key="p">p</button>
+                </div>
+                <div class="keyboard-row">
+                    <div class="spacer-half"></div>
+                    <button data-key="a">a</button>
+                    <button data-key="s">s</button>
+                    <button data-key="d">d</button>
+                    <button data-key="f">f</button>
+                    <button data-key="g">g</button>
+                    <button data-key="h">h</button>
+                    <button data-key="j">j</button>
+                    <button data-key="k">k</button>
+                    <button data-key="l">l</button>
+                    <div class="spacer-half"></div>
+                </div>
+                <div class="keyboard-row">
+                    <button data-key="enter" class="wide-button">Enter</button>
+                    <button data-key="z">z</button>
+                    <button data-key="x">x</button>
+                    <button data-key="c">c</button>
+                    <button data-key="v">v</button>
+                    <button data-key="b">b</button>
+                    <button data-key="n">n</button>
+                    <button data-key="m">m</button>
+                    <button data-key="del" class="wide-button"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
